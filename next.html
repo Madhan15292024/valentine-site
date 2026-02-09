@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ff7eb3, #ff4d6d);
+      font-family: "Segoe UI", sans-serif;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+      animation: pageFade 1.5s ease;
+    }
+
+    @keyframes pageFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 { font-size: 42px; }
+    p { font-size: 20px; margin-bottom: 30px; }
+
+    .timeline {
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 400px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1s;
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.8s;
+    }
+
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    video {
+      width: 180px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1s;
+    }
+
+    #daysCounter {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 18px;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .gallery img {
+        width: 110px;
+        height: 110px;
+      }
+
+      video {
+        width: 130px;
+      }
+
+      .timeline {
+        max-width: 90%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Our story is just beginning ❤️</h1>
+
+  <p>
+    I’m really lucky to have you in my life, Kartheka.
+    Let’s create beautiful memories together forever.
+  </p>
+
+  <div class="timeline">
+    <strong>June 29, 2024 ❤️</strong>
+    <p>The day we met — the beginning of our story.</p>
+  </div>
+
+  <p id="daysCounter"></p>
+
+  <div class="gallery">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+    <img src="img5.jpg">
+    <img src="img6.jpg">
+    <img src="img7.jpg">
+    <img src="img8.jpg">
+    <img src="img9.jpg">
+    <img src="img10.jpg">
+    <img src="img11.jpg">
+    <img src="img12.jpg">
+    <img src="img13.jpg">
+  </div>
+
+  <div class="videos">
+    <video autoplay muted loop><source src="video1.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video2.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video3.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video4.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video5.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video6.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video7.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video8.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video9.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video10.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video11.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video12.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video13.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video14.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video15.mp4" type="video/mp4"></video>
+    <video autoplay muted loop><source src="video16.mp4" type="video/mp4"></video>
+  </div>
+
+  <footer>
+    Made with love by your Gunda ❤️
+  </footer>
+
+  <audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const startDate = new Date("2024-06-29");
+    const today = new Date();
+    const diffDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    document.getElementById("daysCounter").innerText =
+      "It has been " + diffDays + " beautiful days with you ❤️";
+
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bgMusic");
+      music.play().catch(() => {
+        document.body.addEventListener("click", () => music.play(), { once: true });
+      });
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 300);
+
+    const elements = document.querySelectorAll(".timeline, .gallery img, video");
+
+    function revealOnScroll() {
+      elements.forEach((el, index) => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 60) {
+          setTimeout(() => el.classList.add("show"), index * 120);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+
+</body>
+</html>

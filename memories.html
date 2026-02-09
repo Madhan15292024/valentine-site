@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+      animation: pageFade 1.5s ease;
+    }
+
+    @keyframes pageFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.2);
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 14px;
+      max-width: 650px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.8s;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .image-section {
+      margin-top: 80px;
+    }
+
+    #memoryImage {
+      width: 280px;
+      border-radius: 14px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 1s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 18px;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+
+      body {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 18px;
+        max-width: 95%;
+      }
+
+      #memoryImage {
+        width: 220px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>For Kartheka ❤️</h1>
+
+  <div class="card"><p>The day we started talking was the beginning of something very special in my life.</p></div>
+  <div class="card"><p>Thank you for being patient with me and always caring about me.</p></div>
+  <div class="card"><p>Even our silly conversations became memories that make me smile later.</p></div>
+  <div class="card"><p>I promise to stand beside you and support you always.</p></div>
+  <div class="card"><p>I want to create many more memories with you.</p></div>
+  <div class="card"><p>You are my favorite person. I love you Kartheka ❤️</p></div>
+
+  <div class="image-section">
+    <img id="memoryImage" src="memory.jpg">
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 300);
+
+    const elements = document.querySelectorAll(".card, #memoryImage");
+
+    function revealOnScroll() {
+      elements.forEach((el, index) => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 60) {
+          setTimeout(() => el.classList.add("show"), index * 120);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+    document.getElementById("memoryImage").addEventListener("click", () => {
+      window.location.href = "next.html";
+    });
+  </script>
+
+</body>
+</html>
